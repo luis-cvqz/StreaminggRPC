@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+option java_package = "com.proto.archivo";
+
+message ArchivoRequest {
+  string nombre = 1;
+}
+
+message ArchivoResponse {
+  string resultado = 1;
+}
+
+service ArchivoService {
+  rpc archivoStream(ArchivoRequest) returns (stream ArchivoResponse);
+}
